@@ -29,4 +29,4 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node y.js https://c4.dstatbot.win/V4Fjoshi 600 40 950 --query proxy-list.txt
+        run: node y.js https://c4.dstatbot.win/TeD0zfOr 600 80 950 proxy-list.txt
