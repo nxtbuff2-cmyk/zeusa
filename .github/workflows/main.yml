@@ -1,32 +1,40 @@
 name: Treo Tool JS
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' 
+    - cron: '0 */6 * * *'
 
 jobs:
   build-and-run:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Lấy mã nguồn
+      # Lấy source code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Gọi Node.js phiên bản mới nhất hiện tại
-      - name: Cài đặt Node.js mới nhất
+      # Cài Node.js (bản ổn định)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'current' 
+          node-version: '22'
 
-      # Chỉ cần cài đặt thư viện 'colors', các thư viện khác đã có sẵn
-      - name: Cài đặt thư viện bên ngoài
-        run: npm install colors
-      - name:
-        run: npm install gradient-string
-      - name:
-        run: npm install uuid
+      # Cài dependencies
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+          npm install colors gradient-string uuid
 
-      # Chạy file với hệ số
-      - name: Chạy Tool
-        run: node cf-pro.js bypass 120 90 proxy.txt 100 https://rate-limit-1.dstatbot.win/aIUYZUxT
+      # Kiểm tra file tồn tại (debug nếu lỗi)
+      - name: Check files
+        run: |
+          echo "Danh sách file:"
+          ls -la
+
+      # Chạy tool (không crash workflow nếu lỗi)
+      - name: Run Tool
+        run: |
+          node cf-pro.js bypass 300 90 proxy.txt 100 https://rate-limit-1.dstatbot.win/aIUYZUxT || echo "Tool bị lỗi (exit code 1)"
