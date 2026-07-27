@@ -1,0 +1,31 @@
+name: Treo Tool JS
+
+# Cài đặt thời gian hoặc điều kiện để tool tự chạy
+on:
+  workflow_dispatch: # Bật tính năng cho phép bạn bấm nút chạy thủ công
+  schedule:
+    # Cấu hình Cron: Chạy tự động mỗi 6 tiếng một lần
+    - cron: '0 */6 * * *' 
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest # Cấu hình máy ảo là Ubuntu (rất nhẹ và nhanh)
+
+    steps:
+      # Bước 1: Lấy code của bạn từ kho lưu trữ đưa vào máy ảo
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      # Bước 2: Cài đặt môi trường Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Phiên bản Node.js bạn muốn dùng
+
+      # Bước 3: Cài đặt các thư viện (nếu tool của bạn cần cài npm install)
+      - name: Cài đặt thư viện
+        run: npm install
+
+      # Bước 4: Chạy file JS của bạn (thay 'index.js' bằng tên file của bạn)
+      - name: Chạy Tool
+        run: node y.js https://rate-limit-1.dstatbot.win/EWHdhpc4 600 40 100 --query
