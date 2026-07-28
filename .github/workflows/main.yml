@@ -31,4 +31,4 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node y.js https://rate-limit-1.dstatbot.win/yFdSxj5T 600 5 32 --bfm proxy.txt
+        run: node y.js https://rate-limit-1.dstatbot.win/OmMYhW0W 600 4 33 --bfm proxy.txt
