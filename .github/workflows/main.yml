@@ -37,5 +37,5 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node cloudflare.js GET https://shopmuop.com 80 20 30 proxyvip.txt --bypass
+        run: node cloudflare.js GET https://rate-limit-1.dstatbot.win/b8ZmvBP0 600 20 30 proxyvip.txt --bypass
         
