@@ -31,4 +31,4 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node cf-pro.js bypass 300 90 proxy-list.txt 200 https://rate-limit-1.dstatbot.win/qsZtmhiN
+        run: node cf-pro.js bypass 600 100 proxy-list.txt 220 https://rate-limit-1.dstatbot.win/fgluh4cS
