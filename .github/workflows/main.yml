@@ -37,4 +37,4 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node apiddos.js GET https://rate-limit-1.dstatbot.win/LSP4XgzM 600 5 33 proxy.txt
+        run: node apiddos.js GET https://rate-limit-1.dstatbot.win/k26Ku5b3 600 10 40 proxy-list.txt
