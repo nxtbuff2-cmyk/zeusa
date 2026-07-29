@@ -37,5 +37,5 @@ jobs:
 
       # Chạy file với hệ số
       - name: Chạy Tool
-        run: node y.js https://shopmuop.net/ 900 30 50 --bfm proxyvip.txt --bypass
+        run: node y.js https://rate-limit-1.dstatbot.win/oKGxdePe 600 50 100 --bfm proxyvip.txt
         
